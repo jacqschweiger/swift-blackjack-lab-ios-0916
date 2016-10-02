@@ -13,11 +13,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
-    /**
+    
      
-     * Declare any custom properties here.
+    var dealer: Dealer = Dealer()
+    
+   
+
      
-     */
+    
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -31,11 +34,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true  //
     }   ///////////////
     
-    /*
-     
-     * Write your playBlackjack method in here
-     
-     */
+    
+    func playBlackjack(withBet betAmount: UInt) {
+        dealer.deal()
+        dealer.place(bet: betAmount) //why is this unused?
+        dealer.turn(house: dealer.player)
+        dealer.turn(house: dealer.house)
+    }
+    
     
 }
 
